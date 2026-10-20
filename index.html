@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Are You?</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/Kirby-Icon.png">
+</head>
+<body>
+
+  <!-- Shared backgrounds -->
+  <div class="Start_BG" style="background-image: url('images/menu/Background.png');"></div>
+  <div class="Transparent_BG" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.5);"></div>
+
+  <!-- Panel 1: Start -->
+  <section class="panel" id="start" aria-labelledby="start-title">
+    <div class="start-box">
+      <img class="Pom_Start" src="images/menu/Kirby.png" alt="">
+      <h1 id="start-title" tabindex="-1">How Are You?</h1>
+      <p>Are you having a good day? I hope you are!</p>
+      <ul class="menu-list">
+        <li><button class="menu-button" data-target="Q1">Press to START</button></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Panel 2: Question 1 (emotion slider) -->
+  <section class="panel" id="Q1" aria-labelledby="Q1-title" hidden>
+    <div class="question-card">
+      <header class="card-top">
+        <h1 id="Q1-title" tabindex="-1">How are you doing today?</h1>
+      </header>
+
+      <img class="mood-image" id="mood-image" src="images/emotions/neutral.png" alt="Neutral face">
+
+      <p class="mood-label" id="label" aria-live="polite"></p>
+      <p class="mood-value" id="value"></p>
+
+      <div class="bar-wrap">
+        <input class="mood-bar" id="mood" type="range" min="0" max="100" value="50" aria-label="How are you feeling today?">
+        <span class="bar-tick" aria-hidden="true"></span>
+      </div>
+      <div class="bar-ends" aria-hidden="true"><span>Sad</span><span>Neutral</span><span>Happy</span></div>
+
+      <div class="card-actions">
+        <button class="submit-button" data-target="submit">Submit</button>
+        <button class="back-button" data-target="start">Back</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Panel 3: Note (envelope + popup letter) -->
+  <section class="panel" id="submit" aria-labelledby="letter-title" hidden>
+    <div class="question-card">
+      <header class="card-top">
+        <h1 id="letter-title" tabindex="-1">A little message for you</h1>
+      </header>
+
+      <button class="envelope" id="envelope" type="button" aria-expanded="false" aria-label="Open the envelope">
+        <span class="env-back"></span>
+        <span class="env-letter"></span>
+        <span class="env-front"></span>
+        <span class="env-flap"></span>
+        <span class="env-seal" aria-hidden="true">&#9829;</span>
+      </button>
+      <p class="env-hint">Tap the envelope to open it</p>
+
+      <div class="card-actions">
+        <button class="back-button" data-target="Q1">Back</button>
+      </div>
+    </div>
+
+    <!-- The letter that pops up. Edit the message text below. -->
+    <div class="letter-popup" id="letter-popup" hidden>
+      <article class="paper" role="dialog" aria-modal="true" aria-labelledby="letter-heading">
+        <h2 id="letter-heading">Dear Brother/Sister,</h2>
+        <p>You are deeply loved, valued, and cared for by God, who created you in His own image, as stated in Genesis 1:27. You are never alone, because God is always with you, guiding you through every challenge and surrounding you with His love. No matter how difficult life may seem, remember that with God, everything is possible when you put your faith and trust in Him. Thank you for telling me how you feel, and I truly hope that you overcome the challenges you face, find happiness and peace, and enjoy this year to the fullest, knowing that you are loved, cared for, and created with a beautiful purpose.</p>
+        <p class="sign">With love,<br>Calvin Jaden M. Kho</p>
+        <div class="paper-footer">
+          <button class="back-button" id="close-letter" type="button">Close letter</button>
+          <!-- Change the picture here: swap the src path for your own image -->
+          <img class="paper-image" src="images/emotions/Love.png" alt="">
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
