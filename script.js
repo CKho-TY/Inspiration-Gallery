@@ -46,9 +46,9 @@ document.querySelectorAll("[data-target]").forEach((button) => {
 /* ---------- Emotion bar ---------- */
 // To use your own pictures, change the "image" paths below.
 const EMOTIONS = {
-  sad:     { label: "Sad",     image: "images/emotions/sad.png",     color: "#9bb4dc" },
-  neutral: { label: "Neutral", image: "images/emotions/neutral.png", color: "#ffde78" },
-  happy:   { label: "Happy",   image: "images/emotions/happy.png",   color: "#ffc43c" },
+  sad:     { label: "Sad",     image: "images/emotions/Sad.png",     color: "#9bb4dc" },
+  neutral: { label: "Neutral", image: "images/emotions/Neutral.png", color: "#ffde78" },
+  happy:   { label: "Happy",   image: "images/emotions/Happy.png",   color: "#ffc43c" },
 };
 
 const moodBar = document.getElementById("mood");
